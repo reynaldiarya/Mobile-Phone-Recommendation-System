@@ -1,9 +1,10 @@
 <?php
 $latestphone = $_GET["latestphone"] ?? null;
-$command = 'python main.py ' . json_encode($latestphone);
-$output = exec($command);
-$recommendations = json_decode($output, true);
-
+if($latestphone != null){
+    $command = 'python main.py ' . json_encode($latestphone);
+    $output = exec($command);
+    $recommendations = json_decode($output, true);
+}
 $command2 = 'python search.py';
 $output2 = exec($command2);
 $listphone = json_decode($output2, true);
@@ -66,29 +67,31 @@ $listphone = json_decode($output2, true);
         ?>
         <div class="row">
             <?php
-            foreach ($recommendations['name'] as $key => $name) {
-                $price = number_format($recommendations['price'][$key], 2, '.', ',');
-                $storage = $recommendations['Storage'][$key];
-                $ram = $recommendations['RAM'][$key];
-                $rating = $recommendations['ratings'][$key];
-                $image = $recommendations['imgURL'][$key];
-                // echo "Name: $name, Price: $price<br>";
+            if($latestphone != null){
+                foreach ($recommendations['name'] as $key => $name) {
+                    $price = number_format($recommendations['price'][$key], 2, '.', ',');
+                    $storage = $recommendations['Storage'][$key];
+                    $ram = $recommendations['RAM'][$key];
+                    $rating = $recommendations['ratings'][$key];
+                    $image = $recommendations['imgURL'][$key];
+                    // echo "Name: $name, Price: $price<br>";
 
-                // Generate HTML for each recommendation
-                echo <<<HTML
-                    <div class="col-lg-3 my-3">
-                        <div class="card p-5 text-center h-100">
-                            <img class="w-75 mx-auto" src="$image" style="height: 250px" alt="" />
-                            <div class="card-body">
-                                <h5 class="card-title">$name</h5>
-                                <p class="card-text mt-0 mb-3">Price: ₹$price</p>
-                                <p class="card-text mb-0">Storage: $storage GB</p>
-                                <p class="card-text mb-0">RAM: $ram GB</p>
-                                <p class="card-text mb-0">Rating: $rating</p>
+                    // Generate HTML for each recommendation
+                    echo <<<HTML
+                        <div class="col-lg-3 my-3">
+                            <div class="card p-5 text-center h-100">
+                                <img class="w-75 mx-auto" src="$image" style="height: 250px" alt="" />
+                                <div class="card-body">
+                                    <h5 class="card-title">$name</h5>
+                                    <p class="card-text mt-0 mb-3">Price: ₹$price</p>
+                                    <p class="card-text mb-0">Storage: $storage GB</p>
+                                    <p class="card-text mb-0">RAM: $ram GB</p>
+                                    <p class="card-text mb-0">Rating: $rating</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    HTML;
+                        HTML;
+                }
             }
             ?>
         </div>
