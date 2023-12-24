@@ -267,7 +267,7 @@ def recommend_devices(latest_phone):
             df_result.loc[i, 'similarity'] = similarities[i]
 
         df_result = df_result[df_result['name'] != latest_phone]
-        recommendations = df_result.iloc[similarities.argsort()[::-1][:12]]
+        recommendations = df_result.iloc[similarities.argsort()[::-1][:8]]
         recommendations = recommendations.sort_values('similarity', ascending=False)
     else:
         recommendations = df_filtered
