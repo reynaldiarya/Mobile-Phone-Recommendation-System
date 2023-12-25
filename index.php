@@ -16,7 +16,7 @@ $listphone = json_decode($output2, true);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Recommendation System</title>
+    <title>Mobile Phone Recommendation System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-5-theme/1.3.0/select2-bootstrap-5-theme.min.css" integrity="sha512-z/90a5SWiu4MWVelb5+ny7sAayYUfMmdXKEAbpj27PfdkamNdyI3hcjxPxkOPbrXoKIm7r9V2mElt5f1OtVhqA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -35,7 +35,7 @@ $listphone = json_decode($output2, true);
 
 <body class="bg-dark text-white">
     <div class="text-center mt-5 mb-0">
-        <h1>Mobile Recommendation System</h1>
+        <h1>Mobile Phone Recommendation System</h1>
     </div>
     <div class="container d-flex justify-content-center bg-blue">
         <div class="col-lg-4 my-5">
@@ -61,7 +61,7 @@ $listphone = json_decode($output2, true);
             HTML;
         } else {
             echo <<<HTML
-                <h2 class="text-center">Choose a mobile first</h2>
+                <h2 class="text-center">Choose a mobile phone first</h2>
             HTML;
         }
         ?>
@@ -97,7 +97,7 @@ $listphone = json_decode($output2, true);
         </div>
     </div>
     <footer class="py-3">
-        <p class="border-top pt-4 text-center mt-5 mb-0">&copy; 2023 D4 Teknik Informatika Universitas Airlangga</p>
+        <p class="border-top pt-4 text-center mt-5 mb-2">&copy; 2023 D4 Teknik Informatika Universitas Airlangga</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
